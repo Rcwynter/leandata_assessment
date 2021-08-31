@@ -17,12 +17,16 @@ function App() {
       <header>
         <h1 id="title">Company Expense Tables</h1>
       </header>
-      <body>
+      <div>
         <UserTable userData={userData} setUserData={setUserData} />
-        <ExpenseTable expenseData={expenseData} setExpenseData={setExpenseData} />
+        <ExpenseTable 
+        userData={userData} 
+        setUserData={setUserData} 
+        expenseData={setExpenseData}
+        setExpenseData={setExpenseData} />
         <CompanyExpensesTable />
 
-      </body>
+      </div>
     </div>
   );
 }

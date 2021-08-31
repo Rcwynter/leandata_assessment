@@ -1,16 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
+import UserTableRow from './UserTableRow';
+
 
 const UserTable = ({userData, setUserData}) => {
-  
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  const createUser = (fName, lName) => {
+    const userObj = {
+      first_name: fName,
+      last_name: lName,
+      total_expenses: 0
+    };
+    setUserData([...userData, userObj]);
+    console.log("userData: ", userData);
+  }
+
+
 
   return (
     <div id="UserTable">
     <h2>User Table</h2>
     <h3>User Table Input</h3>
     <form>
-      <input type="text" id="first-name-input" placeholder="First Name"></input>
-      <input type="text" id="last-name-input" placeholder="Last Name"></input>
-      <button type="button">Create User</button>
+      <input type="text" id="first-name-input" placeholder="First Name" onChange={e => setFirstName(e.target.value)}></input>
+      <input type="text" id="last-name-input" placeholder="Last Name" onChange={e => setLastName(e.target.value)}></input>
+      <button type="button" onClick={() => createUser(firstName, lastName)}>Create User</button>
     </form>
     <table>
         <thead>
@@ -21,12 +36,20 @@ const UserTable = ({userData, setUserData}) => {
         </tr>
         </thead>
         <tbody>
-            <tr>
-                <td/>
-                <td/>
-                <td/>
-                <td/>
-            </tr>
+          {
+          userData.length > 0 ? 
+          userData.map((item, index) => (
+            <UserTableRow 
+            key={index} 
+            firstName={item.first_name}
+            lastName={item.last_name}
+            totalExpenses={item.total_expenses}/>
+          )) : 
+          <tr>
+            <td>There are no employees currently</td>
+          </tr>
+          
+          }
         </tbody>
     </table>
 </div>

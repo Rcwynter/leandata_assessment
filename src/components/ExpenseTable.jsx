@@ -1,6 +1,7 @@
 import React from 'react';
+import EmployeeOptions from './EmployeeOptions';
 
-const ExpenseTable = () => {
+const ExpenseTable = ({ userData, setUserData, expenseData, setExpenseData }) => {
 
   return (
     <div id="expensetable-div">
@@ -8,7 +9,7 @@ const ExpenseTable = () => {
       <form>
         <select id="full-name-select">
           <option value="">Please Select Employee</option>
-          <option value="Mock Data">Mock Data</option>
+          {userData.map((user, index) => (<EmployeeOptions key={index} userData={userData}/>))}
         </select>
         <select id="category-select">
           <option value="">Please Select Expense Category</option>
@@ -19,6 +20,7 @@ const ExpenseTable = () => {
         </select>
         <input type="text" id="cost-input" placeholder="Enter Cost Here"></input>
       </form>
+      <br></br>
       <table>
         <thead>
         <tr>
@@ -28,12 +30,6 @@ const ExpenseTable = () => {
         </tr>
         </thead>
         <tbody>
-            <tr>
-                <td/>
-                <td/>
-                <td/>
-                <td/>
-            </tr>
         </tbody>
     </table>
     </div>
