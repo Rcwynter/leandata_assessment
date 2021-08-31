@@ -1,9 +1,9 @@
 import React from 'react';
 
-const EmployeeOptions = ({ userData }) => {
+const EmployeeOptions = ({ user }) => {
 
   return (
-    <option value={userData.first_name + " " + userData.last_name}></option>
+    <option value={user.first_name + " " + user.last_name}>{user.first_name + " " + user.last_name}</option>
   )
 }
 

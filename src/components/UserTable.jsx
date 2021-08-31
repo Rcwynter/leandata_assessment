@@ -13,7 +13,7 @@ const UserTable = ({userData, setUserData}) => {
       total_expenses: 0
     };
     setUserData([...userData, userObj]);
-    console.log("userData: ", userData);
+    // console.log("userData: ", userData);
   }
 
 
