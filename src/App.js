@@ -22,7 +22,7 @@ function App() {
         <ExpenseTable 
         userData={userData} 
         setUserData={setUserData} 
-        expenseData={setExpenseData}
+        expenseData={expenseData}
         setExpenseData={setExpenseData} />
         <CompanyExpensesTable />
 

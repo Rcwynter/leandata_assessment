@@ -48,7 +48,6 @@ const UserTable = ({userData, setUserData}) => {
           <tr>
             <td>There are no employees currently</td>
           </tr>
-          
           }
         </tbody>
     </table>

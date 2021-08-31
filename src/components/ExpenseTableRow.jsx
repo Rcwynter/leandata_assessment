@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ExpenseTableRow = () => {
+const ExpenseTableRow = ({ name, category, cost }) => {
 
 
   return (
     <tr>
-      <td>{firstName}</td>
-      <td>{lastName}</td>
-      <td>{totalExpenses}</td>
+      <td>{name}</td>
+      <td>{category}</td>
+      <td>{cost}</td>
     </tr>
   )
 }

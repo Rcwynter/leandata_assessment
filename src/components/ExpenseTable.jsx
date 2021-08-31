@@ -44,7 +44,7 @@ const ExpenseTable = ({ userData, setUserData, expenseData, setExpenseData }) =>
           <option value="Supplies">Supplies</option>
         </select>
         <input type="text" value={cost} onChange={handleChangeCost} id="cost-input" placeholder="Enter Cost Here"></input>
-        <button type="button" onClick={() => createExpense(name, category, cost)}></button>
+        <button type="button" onClick={() => createExpense(name, category, cost)}>Submit Expense</button>
       </form>
       <br></br>
       <table>
@@ -56,8 +56,19 @@ const ExpenseTable = ({ userData, setUserData, expenseData, setExpenseData }) =>
         </tr>
         </thead>
         <tbody>
-          {expenseData.length > 0 ? 
-          expenseData.map((expense, index) => (<ExpenseTableRow key={index} name={expense.name} category={expense.category} cost={expense.cost} />))}
+          {
+          expenseData.length > 0 ? 
+          expenseData.map((expense, index) => (
+          <ExpenseTableRow 
+          key={index} 
+          name={expense.name} 
+          category={expense.category} 
+          cost={expense.cost} />
+          )) :
+          <tr>
+            <td>Currently No Expense Data</td>
+          </tr>
+          }
         </tbody>
     </table>
     </div>
