@@ -1,6 +1,7 @@
 import React from 'react';
 
-const UserTable = () => {
+const UserTable = ({userData, setUserData}) => {
+  
 
   return (
     <div id="UserTable">
