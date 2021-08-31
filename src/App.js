@@ -10,7 +10,12 @@ function App() {
   const [userData, setUserData] = useState([]);
   const [expenseData, setExpenseData] = useState([]);
 
-  
+  // useEffect(() => 
+  //   expenseData.reduce((acc, expense) => {
+  //   return expense.name === fName + " " + lName ? acc + expense.cost : acc;
+  //   }, 0)
+
+  // )
 
   return (
     <div className="App">
@@ -18,7 +23,7 @@ function App() {
         <h1 id="title">Company Expense Tables</h1>
       </header>
       <div>
-        <UserTable userData={userData} setUserData={setUserData} />
+        <UserTable userData={userData} setUserData={setUserData} expenseData={expenseData} />
         <ExpenseTable 
         userData={userData} 
         setUserData={setUserData} 

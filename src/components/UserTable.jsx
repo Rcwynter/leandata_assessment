@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import UserTableRow from './UserTableRow';
 
 
-const UserTable = ({userData, setUserData}) => {
+const UserTable = ({userData, setUserData, expenseData}) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
@@ -13,9 +13,12 @@ const UserTable = ({userData, setUserData}) => {
       total_expenses: 0
     };
     setUserData([...userData, userObj]);
-    // console.log("userData: ", userData);
+    setFirstName("");
+    setLastName("");
   }
-
+  // expenseData.reduce((acc, expense) => {
+  //   return expense.name === fName + " " + lName ? acc + expense.cost : acc;
+  // }, 0)
 
 
   return (
@@ -23,8 +26,8 @@ const UserTable = ({userData, setUserData}) => {
     <h2>User Table</h2>
     <h3>User Table Input</h3>
     <form>
-      <input type="text" id="first-name-input" placeholder="First Name" onChange={e => setFirstName(e.target.value)}></input>
-      <input type="text" id="last-name-input" placeholder="Last Name" onChange={e => setLastName(e.target.value)}></input>
+      <input value={firstName} type="text" id="first-name-input" placeholder="First Name" onChange={e => setFirstName(e.target.value)}></input>
+      <input value={lastName} type="text" id="last-name-input" placeholder="Last Name" onChange={e => setLastName(e.target.value)}></input>
       <button type="button" onClick={() => createUser(firstName, lastName)}>Create User</button>
     </form>
     <table>
