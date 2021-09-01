@@ -26,10 +26,6 @@ const ExpenseTable = ({ userData, setUserData, expenseData, setExpenseData }) =>
       cost: co
     };
     setExpenseData([...expenseData, expenseObj]);
-    const expenseSum = expenseData.reduce((acc, expense) => {
-      return expense.name === n ? acc + expense.cost : acc;
-    }, 0);
-    
     setName("");
     setCategory("");
     setCost("");

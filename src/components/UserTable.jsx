@@ -6,6 +6,10 @@ const UserTable = ({userData, setUserData, expenseData}) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
+  const updateExpenses = () => {
+    
+  }
+
   const createUser = (fName, lName) => {
     const userObj = {
       first_name: fName,

@@ -10,12 +10,19 @@ function App() {
   const [userData, setUserData] = useState([]);
   const [expenseData, setExpenseData] = useState([]);
 
+  // const updateExpenses = () => {
+  //   for (const data of userData) {
+  //     if (userData )
+  //   }
+  // }
+  
   // useEffect(() => 
   //   expenseData.reduce((acc, expense) => {
   //   return expense.name === fName + " " + lName ? acc + expense.cost : acc;
   //   }, 0)
 
   // )
+
 
   return (
     <div className="App">
